@@ -1,86 +1,88 @@
 
 public class Linklist {
 	
-	Node head;
-	Node tail;
+	private Node head;
+	private Node tail;
+	
+	public Node getHead() {
+		return head;
+	}
+
+	public void setHead(Node head) {
+		this.head = head;
+	}
+
+	public Node getTail() {
+		return tail;
+	}
+
+	public void setTail(Node tail) {
+		this.tail = tail;
+	}
 	
 	public void insert(int data) {
-	Node newnode = new Node(data);
-	if(head==null)
-	{
-		head=newnode;
-		tail=newnode;
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = newnode;
+			tail = newnode;
+		} else {
+			tail.setNext(newnode);
+			tail = newnode;
+			}
 	}
-	else
-	{
-		tail.next=newnode;
-		tail=newnode;
-	}
-	}
-	
+
 	public void insertFirst(int data) {
 		Node newnode = new Node(data);
-		newnode.next=head;
-		head=newnode;
+		newnode.setNext(head);
+		head = newnode;
 	}
 	
 	public void insertLast(int data) {
 		Node newnode = new Node(data);
-		tail.next=newnode;
-		tail=newnode;
+		tail.setNext(newnode);
+		tail = newnode;
 	}
 	
-	public void getFirst()
-	{
+	public void getFirst() {
 		System.out.println("Data in Head Node");
-		System.out.println(head.data);
+		System.out.println(head.getData());
 	}
 	
-	public void getLast()
-	
-	{
+	public void getLast() {
 		System.out.println("Data in Tail Node");
-		System.out.println(tail.data);
+		System.out.println(tail.getData());
 	}
 	
-	public void size()
-	{
-		int counter=0;
-		Node current=head;
-		while(current!=null)
-		{
+	public void size() {
+		int counter = 0;
+		Node current = head;
+		while (current != null) {
 			counter++;
-			current=current.next;
+			current = current.getNext();
 		}
 		System.out.println("Size of linked list is" + " " + counter);
 	}
 	
-	public void popFirst()
-	{
-		head=head.next;
+	public void popFirst() {
+		head = head.getNext();
 	}
 	
-	public void popLast()
-	{
-		Node current=head;
-		while(current.next!=tail)
-		{
-			current=current.next;
+	public void popLast() {
+		Node current = head;
+		while (current.getNext() != tail) {
+			current = current.getNext();
 		}
-		tail=current;
-		current.next=null;
+		tail = current;
+		current.setNext(null);
 	}
 	
 	public void display()
 	{
-		Node current=head;
+		Node current = head;
 		System.out.println("LinkedList");
-		while(current!=null)
-		{
-			System.out.println(current.data);
-			current=current.next;
+		while (current != null) {
+			System.out.println(current.getData());
+			current = current.getNext();
 		}
 	}
-	
-	
 }

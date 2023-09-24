@@ -14,7 +14,7 @@ public class QueueLinkedlist {
 		}
 		else
 		{
-			rear.next=temp;
+			rear.setNext(temp);
 			rear=temp;
 		}
 	}
@@ -28,9 +28,9 @@ public class QueueLinkedlist {
 		}
 		else
 		{
-			System.out.println("The element dequeued is "+ front.data);
+			System.out.println("The element dequeued is "+ front.getData());
 			current=front;
-			front=front.next;
+			front=front.getNext();
 			current=null;
 		}
 	}
@@ -43,7 +43,7 @@ public class QueueLinkedlist {
 		}
 		else
 		{
-			System.out.println("Value at Front node is "+ front.data);
+			System.out.println("Value at Front node is "+ front.getData());
 		}
 }
 }
