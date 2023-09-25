@@ -6,6 +6,7 @@ public class SortLinkedlist {
 		Node current = list.getHead();
 		Node index = current;
 		int temp;
+		
 		while (current != null) {
 			index = current.getNext();
 		while (index != null) {
@@ -19,5 +20,4 @@ public class SortLinkedlist {
 		current = current.getNext();
 		}
 	}
-
 }

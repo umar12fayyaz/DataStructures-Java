@@ -7,13 +7,12 @@ public class QueueLinkedlist {
 	public void enqueue(int data)
 	{
 		Node temp=new Node(data);
-		if(front==null && rear==null)
-		{
+		
+		if(front==null && rear==null) {
 			front=temp;
 			rear=temp;
 		}
-		else
-		{
+		else {
 			rear.setNext(temp);
 			rear=temp;
 		}
@@ -22,12 +21,11 @@ public class QueueLinkedlist {
 	public void dequeue()
 	{
 		Node current;
-		if(front==null && rear==null)
-		{
+		
+		if(front==null && rear==null) {
 			System.out.println("Queue is Empty");
 		}
-		else
-		{
+		else {
 			System.out.println("The element dequeued is "+ front.getData());
 			current=front;
 			front=front.getNext();
@@ -37,13 +35,11 @@ public class QueueLinkedlist {
 	
 	public void peek()
 	{
-		if(front==null && rear==null)
-		{
+		if(front==null && rear==null) {
 			System.out.println("Queue is Empty");
 		}
-		else
-		{
+		else {
 			System.out.println("Value at Front node is "+ front.getData());
 		}
-}
+	}
 }

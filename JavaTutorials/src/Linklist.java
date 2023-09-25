@@ -22,13 +22,14 @@ public class Linklist {
 	
 	public void insert(int data) {
 		Node newnode = new Node(data);
+		
 		if (head == null) {
 			head = newnode;
 			tail = newnode;
 		} else {
 			tail.setNext(newnode);
 			tail = newnode;
-			}
+		}
 	}
 
 	public void insertFirst(int data) {
@@ -56,6 +57,7 @@ public class Linklist {
 	public void size() {
 		int counter = 0;
 		Node current = head;
+		
 		while (current != null) {
 			counter++;
 			current = current.getNext();
@@ -69,6 +71,7 @@ public class Linklist {
 	
 	public void popLast() {
 		Node current = head;
+		
 		while (current.getNext() != tail) {
 			current = current.getNext();
 		}
@@ -80,6 +83,7 @@ public class Linklist {
 	{
 		Node current = head;
 		System.out.println("LinkedList");
+		
 		while (current != null) {
 			System.out.println(current.getData());
 			current = current.getNext();
