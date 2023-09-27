@@ -5,7 +5,7 @@ public class StackLinkedlist {
 	public void push(int data)
 	{
 		Node temp=new Node(data);
-		temp.next=top;
+		temp.setNext(top);
 		top=temp;
 	}
 	
@@ -17,8 +17,8 @@ public class StackLinkedlist {
 		}
 		else
 		{
-			System.out.println("The popped element is "+ top.data);
-			top=top.next;
+			System.out.println("The popped element is "+ top.getData());
+			top=top.getNext();
 		}
 	}
 	
@@ -30,7 +30,7 @@ public class StackLinkedlist {
 		}
 		else
 		{
-			System.out.println("The top element is "+ top.data);
+			System.out.println("The top element is "+ top.getData());
 		}
 	}
 
